@@ -8,7 +8,6 @@ import http from 'node:http'
 import { json } from './middlewares/json.js'
 import { routes } from './routes.js'
 
-
 // GET => Buscar recurso no back-end
 // POST => Criar um recurso no back-end
 // PUT => Atualizar um recurso no back-end
@@ -17,6 +16,10 @@ import { routes } from './routes.js'
 
 // Stateful = aplicação depende de informações em memória, dados estão em memória
 // Stateless = os dados se mantêm igual, não salva informações em memória
+
+// Query Parameters: URL Stateful => filtros, paginação, não obrigatórios
+// Route Parameters: Identificação de recurso (url da requisição)
+// Request Body: Envio de informações de um formulário (HTTPs)
 
 const server = http.createServer(async (req, res) => {
   const {method, url} = req
